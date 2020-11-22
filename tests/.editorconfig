@@ -1,0 +1,6 @@
+root = false
+
+[*.cs]
+
+# Async suffix
+dotnet_diagnostic.VSTHRD200.severity = none
