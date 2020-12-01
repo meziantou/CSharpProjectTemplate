@@ -31,7 +31,7 @@ jobs:
     - name: Run dotnet format
       run: dotnet format --check -v:normal
 
-  build_website:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -42,5 +42,5 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
 
-    - name: Test SiteBuilder
+    - name: Test
       run: dotnet test --configuration Release
