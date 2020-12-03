@@ -40,7 +40,35 @@ jobs:
       uses: actions/setup-dotnet@v1
 
     - name: Build
-      run: dotnet build --configuration Release
+      run: dotnet build --configuration Release /bl
 
     - name: Test
       run: dotnet test --configuration Release
+            
+    - uses: actions/upload-artifact@v2
+      with:
+        name: logs
+        if-no-files-found: warn
+        retention-days: 5
+        path: |
+          **/*.binlog
+
+  build_nuget_packages:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+
+    - name: Pack
+      run: dotnet pack --configuration Release
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: nuget_packages
+        if-no-files-found: error
+        retention-days: 5
+        path: |
+          **/*.nupkg
+          **/*.snupkg
