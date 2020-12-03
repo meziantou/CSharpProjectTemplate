@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using ClassLibrary;
+using Xunit;
 
 namespace ConsoleApp.Tests
 {
@@ -7,6 +8,7 @@ namespace ConsoleApp.Tests
         [Fact]
         public void Test1()
         {
+            Assert.Equal(3, Class1.Add(1, 2));
         }
     }
 }
