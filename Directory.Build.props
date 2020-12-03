@@ -9,6 +9,7 @@
 
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <ReportAnalyzer>true</ReportAnalyzer>
 
     <RestoreSources>https://api.nuget.org/v3/index.json</RestoreSources>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
@@ -44,7 +45,7 @@
     SourceLink
        - https://www.meziantou.net/how-to-debug-nuget-packages-using-sourcelink.htm
        - https://github.com/dotnet/sourcelink/#using-sourcelink
-  -->
+  -->  
   <PropertyGroup>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
