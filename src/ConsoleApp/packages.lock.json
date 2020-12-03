@@ -4,9 +4,15 @@
     ".NETCoreApp,Version=v5.0": {
       "Meziantou.Analyzer": {
         "type": "Direct",
-        "requested": "[1.0.612, )",
-        "resolved": "1.0.612",
-        "contentHash": "XbUqgOge1LBqlZfIwacF5fD6abXdIymL61GMB7ieXQrYwk2YKsKtdYjq4hzk9EEwmcuMUezlOWU6tXCvhepi3g=="
+        "requested": "[1.0.620, )",
+        "resolved": "1.0.620",
+        "contentHash": "RJJ02pTzsYucHGixLiB2UHLojgcSvD6j3iYfILoq+iMBGdR0GplqdocGrv+Xp/Wn/7nMEuAhu/9Xqm5RZKI3mw=="
+      },
+      "Microsoft.CodeAnalysis.BannedApiAnalyzers": {
+        "type": "Direct",
+        "requested": "[3.3.1, )",
+        "resolved": "3.3.1",
+        "contentHash": "UkoYLxQsyvwfoH1LgHWOm057dxsHTZQHSa7J0SwPhF65PUCau8R4MftoZkDU+ZJrDz+PyfQJBpaL+kdjisg9XA=="
       },
       "Microsoft.CodeAnalysis.FxCopAnalyzers": {
         "type": "Direct",
@@ -47,10 +53,7 @@
         "contentHash": "EI5Afqt03Kq4Wy5Ot6nGvnwunisM9ORi5L9fteCCOK1Wh283wAhM1dIOWOsBN3jlFbw1VTeVPR8oPz9J9xlHLw=="
       },
       "classlibrary": {
-        "type": "Project",
-        "dependencies": {
-          "Microsoft.VisualStudio.Threading.Analyzers": "16.8.55"
-        }
+        "type": "Project"
       }
     }
   }
