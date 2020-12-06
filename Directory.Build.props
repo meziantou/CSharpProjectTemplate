@@ -4,11 +4,14 @@
     <LangVersion>9.0</LangVersion>
     <AnalysisLevel>latest</AnalysisLevel>
     <Deterministic>true</Deterministic>
-    <Features>strict</Features>
     <TreatWarningsAsErrors Condition="'$(Configuration)' != 'Debug'">true</TreatWarningsAsErrors>
 
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <Features>strict</Features>
+    <AnalysisLevel>latest</AnalysisLevel>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+
     <ReportAnalyzer>true</ReportAnalyzer>
 
     <RestoreSources>https://api.nuget.org/v3/index.json</RestoreSources>
@@ -16,12 +19,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1">
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
 
-    <PackageReference Include="Meziantou.Analyzer" Version="1.0.620">
+    <PackageReference Include="Meziantou.Analyzer" Version="1.0.629">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -39,13 +42,16 @@
 
   <ItemGroup>
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)BannedSymbols.txt" Link="Properties/BannedSymbols.txt" />
+
+    <Compile Include="$(MSBuildThisFileDirectory)/common/AssemblyInfo.cs"
+             Link="Properties/AssemblyInfo.common.cs" />
   </ItemGroup>
 
   <!--
     SourceLink
        - https://www.meziantou.net/how-to-debug-nuget-packages-using-sourcelink.htm
        - https://github.com/dotnet/sourcelink/#using-sourcelink
-  -->  
+  -->
   <PropertyGroup>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -66,6 +72,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+    <SourceRoot Include="$(MSBuildThisFileDirectory)/"/>
   </ItemGroup>
 
 </Project>
