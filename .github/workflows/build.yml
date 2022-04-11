@@ -45,7 +45,7 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release --no-build --collect:"XPlat Code Coverage"
             
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: logs
         if-no-files-found: warn
@@ -65,7 +65,7 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release
       
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: nuget_packages
         if-no-files-found: error
